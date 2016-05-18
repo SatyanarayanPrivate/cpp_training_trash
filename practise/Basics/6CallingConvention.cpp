@@ -21,7 +21,7 @@ namespace Ex7
 };
 using namespace Ex7;
 
-void main7()
+int main()
 {
 	CA obj;
 	obj.fun4(10,20);
@@ -60,5 +60,6 @@ void main7()
 	mov	ecx, 10					
 	call	?fun3@@YIXHH@Z				
 	*/
-	
+    
+    return 0;
 }

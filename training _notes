@@ -8,4 +8,7 @@ Generate assembly code:
     
     $ g++ -save-temps -fverbose-asm 1FunctionProAndEpilog.cpp
     $ gcc -save-temps -fverbose-asm 1FunctionProAndEpilog.c
+    
+    $ g++ -save-temps -fverbose-asm file_name.cpp && cat file_name.s
 ==========================================================================================================================================================
+
