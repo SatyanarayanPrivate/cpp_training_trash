@@ -1,0 +1,11 @@
+==========================================================================================================================================================
+Functions::
+Generate assembly code:
+    $ g++ -g -c naming_conventions.cpp
+    $ objdump -d -M intel -S naming_conventions.o
+    
+    $ g++ -S -o my_asm_output.s example02.cpp
+    
+    $ g++ -save-temps -fverbose-asm 1FunctionProAndEpilog.cpp
+    $ gcc -save-temps -fverbose-asm 1FunctionProAndEpilog.c
+==========================================================================================================================================================
