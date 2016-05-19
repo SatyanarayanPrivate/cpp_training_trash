@@ -1,0 +1,134 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+namespace usage::
+
+namespace __name {
+    // statements
+    func() {
+    }
+}
+
+__function () {
+    using namespace __name;
+}
+==OR==
+__function () {
+    __name:: func();
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class member function defination::
+
+class __name {
+public:
+    member_function() {
+    }
+};
+==OR==
+class __name {
+access_specifier:
+    member_function();
+};
+
+void __name:: member_function() {
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Constructor:: useful for initializing resources
+
+class __name {
+    member1;
+    member2;
+public:
+    // simple constructor
+    __name() {
+    }
+    
+    // parameterized constructor
+    __name(arg1, arg2) {
+    }
+    
+    // Using Initialization Lists to Initialize Fields
+    __name( arg1, arg2): member1(arg1), member2(arg2) {
+    }
+    //some what it is equal to
+    __name( arg1, arg2) {
+        member1 = arg1;
+        member2 = arg2;
+    }    
+    
+    // Copy constructor
+    __name(const __name &obj) {
+    }
+};
+==OR==
+//we can define outside class declairations
+__name::__name() {
+
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Destructor:: useful for releasing resources
+class __name {
+public:
+    ~__name(void) {
+    }
+};
+==OR==
+//we can define outside class declairations
+__name::~__name() {
+
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+friend function:: 
+    - defined outside that class' scope but it has the right to access all private and protected members of the class.
+    - A friend can be a function, function template, or member function, or a class or class template, in which case the entire class and 
+      all of its members are friends.
+    - Friend functions do not have a this pointer, because friends are not members of a class. Only member functions have a this pointer.    
+class __name {
+public:
+    friend void func();
+}
+void func() {
+}
+
+func();
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+static members of class:: 
+    - A static member is shared by all objects of the class
+class __name {
+public:
+    // in public only
+    static int var;
+}
+int __name:: var = 0x00;
+func() {
+// process using following
+data = __name:: var;
+}
+
+static functions of class:: 
+    - A static member function can only access static data member, other static member functions and any other functions from outside the class.
+    - Static member functions have a class scope and they do not have access to the this pointer of the class.
+    
+class __name {
+public:
+    // in public only
+    static int var;
+    static int static_func() {
+        // body
+    }
+}
+func() {
+// process using following
+data = __name:: static_func();
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
