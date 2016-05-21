@@ -12,4 +12,17 @@ Generate assembly code:
     $ g++ -save-temps -fverbose-asm file_name.cpp && cat file_name.s
 ==========================================================================================================================================================
 
+21/05/16
 
+virtual
+class __name: public base_class
+{
+public: 
+    vitual func() __keyword {}
+};
+__keyword
+- override
+- final
+
+========
+interface --> define rules only pure vitual function
