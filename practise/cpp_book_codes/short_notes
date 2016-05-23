@@ -82,6 +82,34 @@ public:
 __name::~__name() {
 
 }
+
+vitual destructor::
+    - A destructor is called whenever an object is deleted, but there are some cases when users code doesn’t know which destructor should be called.
+class CA {
+    public:
+    virtual ~CA() {
+    cout<<"dest CA"<<endl;
+    }
+};
+class CB:public CA {
+public:
+    ~CB() {
+    cout<<"dest cb"<<endl;
+    }
+};
+void main() {
+    CA *obj = new CB;
+    delete obj;
+}
+
+A class can have a pure virtual destructor provided it gives an explicit definition else where.
+class CA {
+    public:
+    virtual ~CA() = 0;
+};
+inline CA::~CA() {
+cout<<"dest CA"<<endl;
+}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
