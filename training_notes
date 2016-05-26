@@ -26,3 +26,12 @@ __keyword
 
 ========
 interface --> define rules only pure vitual function
+
+==========================================================================================================================================================
+
+26/05/16
+
+Exception handling
+- terminate method gets called while exception is generated
+
+
