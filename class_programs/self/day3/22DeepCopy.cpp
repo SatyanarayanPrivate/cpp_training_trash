@@ -39,6 +39,8 @@ public:
 };
 #endif
 
+// deep copy
+
 class CA {
     int *i;
 public:
@@ -57,7 +59,8 @@ public:
         delete i;
     }
     CA & operator= (const CA &para) {
-        this->i = para->i;
+        *i = *para.i;
+        return *this;
     }
 };
 
@@ -75,6 +78,10 @@ public:
     ~smart () {
         delete ptr;
     }    
+    smart & operator= (const smart &para) {
+        *ptr = *para.ptr;
+        return *this;
+    }
 };
 
 int main (void) {
